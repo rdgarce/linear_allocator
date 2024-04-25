@@ -1,2 +1,2 @@
-# linear_allocator
-Single header linear allocator
+# Linear Allocator in C
+Single header linear allocator written in C
