@@ -35,7 +35,7 @@ struct lin_ {
     void *buffer;
 };
 
-void lin_init(lin *a, void *buffer, size_t buf_size) {
+static void lin_init(lin *a, void *buffer, size_t buf_size) {
 
     check(a);
     a->used_size = 0;
@@ -43,7 +43,7 @@ void lin_init(lin *a, void *buffer, size_t buf_size) {
     a->buffer = buffer;
 }
 
-void *lin_alloc(lin *a, size_t size) {
+static void *lin_alloc(lin *a, size_t size) {
 
     check(a);
     size_t offset = -size & ALIGNMENT_MASK_;
@@ -68,7 +68,7 @@ void *lin_alloc(lin *a, size_t size) {
     }
 }
 
-void lin_freeAll(lin *a) {
+static void lin_freeAll(lin *a) {
 
     check(a);
     print_debug("*** lin_freeAll *** \n  old_used_size: %ld, new_used_size: 0\n",
